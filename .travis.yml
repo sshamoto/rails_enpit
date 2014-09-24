@@ -8,6 +8,7 @@ deploy:
   app: still-shelf-5853
   on:
     repo: sshamoto/rails_enpit
+
 addons:
   postgresql: "9.3"
 before_script:
