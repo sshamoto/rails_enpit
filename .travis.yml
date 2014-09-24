@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.1.2
+deploy:
+  provider: heroku
+  api_key:
+    secure: YTLwsmv7x5cYADfRheJDAJoL60gOaHTN6BqBCto1DZkr3kMOEO3zL7OtTwrU5V6yXDbgu4Te/BZCLlfQFy3agy1aPE6LMtpQx432QSA8xbcB1HFcX3ZrdwGXscz5W+XBmybbcKYNjvoier+lnK0SiTqLtXf9X1FsmkXVYnrMiuU=
+  app: still-shelf-5853
+  on:
+    repo: sshamoto/rails_enpit
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
